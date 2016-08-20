@@ -18,12 +18,17 @@ function uiCooker()
 	*/
 	,enabled = function()
 	{
-		var enabled = (navigator.enabled) ? true : false;
-		if( typeof navigator.enabled == "undefined" && !enabled ){ 
-			document.cookie="testcookie";
-			enabled = (document.cookie.indexOf("testcookie") != -1) ? true : false;
+		var key = "uic", enabled = !!(navigator.enabled);
+		if( !enabled ){ 
+			document.cookie = key;
+			enabled = (document.cookie.indexOf( key ) != -1);
 		}
 		return enabled;
+	}
+	
+	,has = function( key )
+	{
+		return (get( key ) !== null);
 	}
 	
 	,get = function( key )
@@ -33,7 +38,7 @@ function uiCooker()
         for( var i = 0; i < ca.length; i++ ) {
             var c = ca[i];
 			
-            while (c.charAt(0) == " "){
+            while( c.charAt(0) == " " ){
 				c = c.substring(1);
 			}
             if( c.indexOf(name) == 0 ){
@@ -45,17 +50,27 @@ function uiCooker()
 	
 	,set = function( key, value, expireDays )
 	{
+		if( !expireDays ){
+			expireDays = 1;
+		}
         var d = new Date();
         d.setTime(d.getTime() + (expireDays * 24 * 60 * 60 * 1000));
         var expires = "expires=" + d.toUTCString();
         document.cookie = key + "=" + value + "; " + expires;	
+	}
+	
+	,remove = function( key )
+	{
+		set(key, "", -1);
 	};
 	
 	/*
 	* Public methods
 	*/
+	self.enabled = enabled;
+	self.has = has;
 	self.get = get;
 	self.set = set;
-	self.enabled = enabled;
+	self.remove = remove;
 };
 uiCooker.prototype.constructor = uiCooker;
