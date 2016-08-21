@@ -56,12 +56,16 @@ function uiCooker()
 		var d = new Date();
 		d.setTime(d.getTime() + (expireDays * 24 * 60 * 60 * 1000));
 		var expires = "expires=" + d.toUTCString();
-		document.cookie = key + "=" + value + "; " + expires;	
+		document.cookie = key + "=" + value + "; " + expires;
+		
+		return value;
 	}
 	
 	,remove = function( key )
-	{
+	{	
+		var data = get( key );
 		set(key, "", -1);
+		return data;
 	};
 	
 	/*
