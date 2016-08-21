@@ -7,7 +7,7 @@
 
 ```html
 <head>
-	<link href="uiglance.default.css" rel="stylesheet">
+	...
 </head>
 <body>
 	...
