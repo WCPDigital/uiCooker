@@ -1,7 +1,7 @@
 #uiCooker Javascript Utility - A light-weight JavaScript Cookie util.
 ================================
 
-**A super simple, super small, bare-bones JavaScript Cookie helper.
+**A super simple, super small, bare-bones JavaScript Cookie helper.**
 
 ###How to use uiCooker
 
