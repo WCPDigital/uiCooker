@@ -1,9 +1,9 @@
-# uiCooker Javascript Utility - A light-weight JavaScript Cookie util.
+#uiCooker Javascript Utility - A light-weight JavaScript Cookie util.
 ================================
 
-** A super simple, super small, bare-bones JavaScript Cookie helper.
+**A super simple, super small, bare-bones JavaScript Cookie helper.
 
-### How to use uiCooker
+###How to use uiCooker
 
 ```html
 <head>
@@ -44,7 +44,7 @@ else{
 </script>
 ```
 
-## License
+##License
 Copyright &copy; WCP Digital &amp; Patrick Purcell<br>
 Licensed under the [MIT license](http://www.opensource.org/licenses/mit-license.php).
 <br>**Commercial use?** Go for it! You can include uiGlance in your commercial products.
