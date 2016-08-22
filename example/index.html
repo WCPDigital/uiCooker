@@ -20,28 +20,26 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
         <script src="js/vendor/bootstrap.min.js"></script>
 		
-        <script src="../src/uicooker.js"></script>
+        <script src="../src/jquery.uicooker.min.js"></script>
 		<script>
 			"use strict";
-			var Cookies = new uiCooker();
-			
-			var enabled = Cookies.enabled();
+			var enabled = $.uiCooker.enabled();
 			if( enabled ){
 				console.log("Cookies enabled.");
 				
 				var data = null;
-				if( Cookies.has("customData") ){
+				if( $.uiCooker.has("customData") ){
 					console.log("Cookie exists.");
 					
-					data = Cookies.get("customData");
+					data = $.uiCooker.get("customData");
 					console.log("Get cookie: " + data );
 					
-					data = Cookies.remove("customData");
+					data = $.uiCooker.remove("customData");
 					console.log("Remove cookie: " + data );
 				}
 				
 				else{
-					data = Cookies.set("customData", 'some_custom_data')
+					data = $.uiCooker.set("customData", 'some_custom_data')
 					console.log("Set cookie: " + data );
 				}
 			}
