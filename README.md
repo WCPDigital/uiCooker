@@ -5,13 +5,7 @@
 
 ##How to use uiCooker
 
-```html
-<head>
-	...
-</head>
-<body>
-	...
-</body>
+```js
 <script src="uicooker.min.js"></script>
 <script>
 "use strict";
@@ -46,13 +40,7 @@ else{
 
 ##Or using jQuery uiCooker
 
-```html
-<head>
-	...
-</head>
-<body>
-	...
-</body>
+```js
 <script src="jquery.uicooker.min.js"></script>
 <script>
 "use strict";
